@@ -9,15 +9,32 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
+    @StateObject var model = HomeViewModel()
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Entry]
+    @Query private var entries: [Entry]
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(items) { entry in
-                    Text(entry.title)
+                Text(model.greetingMessage)
+                
+                Section("Your Journal") {
+                    ForEach(entries) { entry in
+                        Text(entry.title)
+                    }
                 }
+            }
+            .navigationTitle("Journal")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Add") {
+                        model.addEntry()
+                    }
+                }
+            }
+            .task {
+                model.setup(context: modelContext)
+                model.start()
             }
         }
     }

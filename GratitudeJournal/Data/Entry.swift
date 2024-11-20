@@ -17,7 +17,7 @@ final class Entry {
     
     var user: User?
     
-    init() {
-        
+    init(user: User?) {
+        self.user = user
     }
 }
