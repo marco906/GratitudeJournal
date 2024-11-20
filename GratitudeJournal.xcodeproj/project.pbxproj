@@ -6,15 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F1F2CEE628000475BB1 /* GratitudeJournalApp.swift */; };
+		A9E91F222CEE628000475BB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F212CEE628000475BB1 /* ContentView.swift */; };
+		A9E91F242CEE628000475BB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F232CEE628000475BB1 /* Item.swift */; };
+		A9E91F262CEE628100475BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E91F252CEE628100475BB1 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A9E91F302CEE628100475BB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9E91F142CEE628000475BB1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A9E91F1B2CEE628000475BB1;
-			remoteInfo = GratitudeJournal;
-		};
-		A9E91F3A2CEE628100475BB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9E91F142CEE628000475BB1 /* Project object */;
 			proxyType = 1;
@@ -25,24 +25,23 @@
 
 /* Begin PBXFileReference section */
 		A9E91F1C2CEE628000475BB1 /* GratitudeJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GratitudeJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E91F1F2CEE628000475BB1 /* GratitudeJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeJournalApp.swift; sourceTree = "<group>"; };
+		A9E91F212CEE628000475BB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9E91F232CEE628000475BB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A9E91F252CEE628100475BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9E91F272CEE628100475BB1 /* GratitudeJournal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GratitudeJournal.entitlements; sourceTree = "<group>"; };
 		A9E91F2F2CEE628100475BB1 /* GratitudeJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratitudeJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9E91F392CEE628100475BB1 /* GratitudeJournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratitudeJournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A9E91F1E2CEE628000475BB1 /* GratitudeJournal */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GratitudeJournal;
-			sourceTree = "<group>";
-		};
 		A9E91F322CEE628100475BB1 /* GratitudeJournalTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GratitudeJournalTests;
 			sourceTree = "<group>";
 		};
-		A9E91F3C2CEE628100475BB1 /* GratitudeJournalUITests */ = {
+		A9E91F5A2CEE643A00475BB1 /* Preview Content */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GratitudeJournalUITests;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,22 +61,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9E91F362CEE628100475BB1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A9E91F132CEE628000475BB1 = {
 			isa = PBXGroup;
 			children = (
-				A9E91F1E2CEE628000475BB1 /* GratitudeJournal */,
+				A9E91F572CEE640100475BB1 /* GratitudeJournal */,
 				A9E91F322CEE628100475BB1 /* GratitudeJournalTests */,
-				A9E91F3C2CEE628100475BB1 /* GratitudeJournalUITests */,
 				A9E91F1D2CEE628000475BB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,9 +78,69 @@
 			children = (
 				A9E91F1C2CEE628000475BB1 /* GratitudeJournal.app */,
 				A9E91F2F2CEE628100475BB1 /* GratitudeJournalTests.xctest */,
-				A9E91F392CEE628100475BB1 /* GratitudeJournalUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A9E91F572CEE640100475BB1 /* GratitudeJournal */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F5D2CEE646F00475BB1 /* Data */,
+				A9E91F5C2CEE646800475BB1 /* Features */,
+				A9E91F582CEE641E00475BB1 /* Resources */,
+			);
+			path = GratitudeJournal;
+			sourceTree = "<group>";
+		};
+		A9E91F582CEE641E00475BB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F5A2CEE643A00475BB1 /* Preview Content */,
+				A9E91F252CEE628100475BB1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9E91F5C2CEE646800475BB1 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F272CEE628100475BB1 /* GratitudeJournal.entitlements */,
+				A9E91F1F2CEE628000475BB1 /* GratitudeJournalApp.swift */,
+				A9E91F602CEE649700475BB1 /* AddEntry */,
+				A9E91F5F2CEE649000475BB1 /* Settings */,
+				A9E91F5E2CEE648700475BB1 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A9E91F5D2CEE646F00475BB1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F232CEE628000475BB1 /* Item.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A9E91F5E2CEE648700475BB1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F212CEE628000475BB1 /* ContentView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A9E91F5F2CEE649000475BB1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A9E91F602CEE649700475BB1 /* AddEntry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddEntry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,7 +159,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A9E91F1E2CEE628000475BB1 /* GratitudeJournal */,
+				A9E91F5A2CEE643A00475BB1 /* Preview Content */,
 			);
 			name = GratitudeJournal;
 			packageProductDependencies = (
@@ -140,29 +191,6 @@
 			productReference = A9E91F2F2CEE628100475BB1 /* GratitudeJournalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A9E91F382CEE628100475BB1 /* GratitudeJournalUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9E91F492CEE628100475BB1 /* Build configuration list for PBXNativeTarget "GratitudeJournalUITests" */;
-			buildPhases = (
-				A9E91F352CEE628100475BB1 /* Sources */,
-				A9E91F362CEE628100475BB1 /* Frameworks */,
-				A9E91F372CEE628100475BB1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A9E91F3B2CEE628100475BB1 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A9E91F3C2CEE628100475BB1 /* GratitudeJournalUITests */,
-			);
-			name = GratitudeJournalUITests;
-			packageProductDependencies = (
-			);
-			productName = GratitudeJournalUITests;
-			productReference = A9E91F392CEE628100475BB1 /* GratitudeJournalUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +205,6 @@
 						CreatedOnToolsVersion = 16.1;
 					};
 					A9E91F2E2CEE628100475BB1 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = A9E91F1B2CEE628000475BB1;
-					};
-					A9E91F382CEE628100475BB1 = {
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = A9E91F1B2CEE628000475BB1;
 					};
@@ -202,7 +226,6 @@
 			targets = (
 				A9E91F1B2CEE628000475BB1 /* GratitudeJournal */,
 				A9E91F2E2CEE628100475BB1 /* GratitudeJournalTests */,
-				A9E91F382CEE628100475BB1 /* GratitudeJournalUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,17 +235,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E91F262CEE628100475BB1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A9E91F2D2CEE628100475BB1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9E91F372CEE628100475BB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,17 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E91F222CEE628000475BB1 /* ContentView.swift in Sources */,
+				A9E91F242CEE628000475BB1 /* Item.swift in Sources */,
+				A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A9E91F2B2CEE628100475BB1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9E91F352CEE628100475BB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,11 +273,6 @@
 			isa = PBXTargetDependency;
 			target = A9E91F1B2CEE628000475BB1 /* GratitudeJournal */;
 			targetProxy = A9E91F302CEE628100475BB1 /* PBXContainerItemProxy */;
-		};
-		A9E91F3B2CEE628100475BB1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A9E91F1B2CEE628000475BB1 /* GratitudeJournal */;
-			targetProxy = A9E91F3A2CEE628100475BB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -390,12 +398,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GratitudeJournal/GratitudeJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 24001;
 				DEVELOPMENT_ASSET_PATHS = "\"GratitudeJournal/Preview Content\"";
 				DEVELOPMENT_TEAM = L42JP6V96L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gratitude Journal";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -406,7 +415,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -414,10 +423,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.GratitudeJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
@@ -429,12 +439,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GratitudeJournal/GratitudeJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 24001;
 				DEVELOPMENT_ASSET_PATHS = "\"GratitudeJournal/Preview Content\"";
 				DEVELOPMENT_TEAM = L42JP6V96L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gratitude Journal";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -445,7 +456,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -453,10 +464,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.GratitudeJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
@@ -507,50 +519,6 @@
 			};
 			name = Release;
 		};
-		A9E91F4A2CEE628100475BB1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L42JP6V96L;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.GratitudeJournalUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = GratitudeJournal;
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Debug;
-		};
-		A9E91F4B2CEE628100475BB1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L42JP6V96L;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.GratitudeJournalUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = GratitudeJournal;
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -577,15 +545,6 @@
 			buildConfigurations = (
 				A9E91F472CEE628100475BB1 /* Debug */,
 				A9E91F482CEE628100475BB1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A9E91F492CEE628100475BB1 /* Build configuration list for PBXNativeTarget "GratitudeJournalUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9E91F4A2CEE628100475BB1 /* Debug */,
-				A9E91F4B2CEE628100475BB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
