@@ -8,13 +8,14 @@
 import Foundation
 import SwiftData
 
-
 @Model
 final class Entry {
     var id: UUID = UUID()
     var title: String = ""
     var content: String = ""
     var mood: String = ""
+    
+    var user: User?
     
     init() {
         

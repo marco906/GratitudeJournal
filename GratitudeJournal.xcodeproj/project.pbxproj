@@ -11,6 +11,7 @@
 		A9E91F222CEE628000475BB1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F212CEE628000475BB1 /* HomeView.swift */; };
 		A9E91F242CEE628000475BB1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F232CEE628000475BB1 /* Entry.swift */; };
 		A9E91F262CEE628100475BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E91F252CEE628100475BB1 /* Assets.xcassets */; };
+		A9E91F622CEE6B5300475BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F612CEE6B4E00475BB1 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		A9E91F252CEE628100475BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9E91F272CEE628100475BB1 /* GratitudeJournal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GratitudeJournal.entitlements; sourceTree = "<group>"; };
 		A9E91F2F2CEE628100475BB1 /* GratitudeJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratitudeJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E91F612CEE6B4E00475BB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E91F232CEE628000475BB1 /* Entry.swift */,
+				A9E91F612CEE6B4E00475BB1 /* User.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E91F622CEE6B5300475BB1 /* User.swift in Sources */,
 				A9E91F222CEE628000475BB1 /* HomeView.swift in Sources */,
 				A9E91F242CEE628000475BB1 /* Entry.swift in Sources */,
 				A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */,

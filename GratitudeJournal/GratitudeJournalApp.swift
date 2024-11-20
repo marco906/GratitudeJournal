@@ -12,7 +12,8 @@ import SwiftData
 struct GratitudeJournalApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Entry.self,
+            User.self,
+            Entry.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
