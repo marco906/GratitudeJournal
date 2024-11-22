@@ -41,5 +41,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView(user: User(name: "Marco"))
-        .modelContainer(for: Entry.self, inMemory: true)
+        .modelContainer(DataController.previewContainer)
 }

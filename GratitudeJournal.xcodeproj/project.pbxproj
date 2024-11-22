@@ -16,6 +16,10 @@
 		A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6B2CF0F7D500475BB1 /* MainView.swift */; };
 		A9E91F6E2CF0F7F600475BB1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */; };
 		A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */; };
+		A9E91F742CF102FD00475BB1 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F732CF102FD00475BB1 /* EntryDetailView.swift */; };
+		A9E91F762CF1031E00475BB1 /* EntryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F752CF1031E00475BB1 /* EntryDetailViewModel.swift */; };
+		A9E91F782CF105A200475BB1 /* ModelContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F772CF1059800475BB1 /* ModelContext.swift */; };
+		A9E91F7D2CF1060600475BB1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F7C2CF1060100475BB1 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 		A9E91F6B2CF0F7D500475BB1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A9E91F732CF102FD00475BB1 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
+		A9E91F752CF1031E00475BB1 /* EntryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewModel.swift; sourceTree = "<group>"; };
+		A9E91F772CF1059800475BB1 /* ModelContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContext.swift; sourceTree = "<group>"; };
+		A9E91F7C2CF1060100475BB1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -97,6 +105,7 @@
 			children = (
 				A9E91F272CEE628100475BB1 /* GratitudeJournal.entitlements */,
 				A9E91F1F2CEE628000475BB1 /* GratitudeJournalApp.swift */,
+				A9E91F792CF105D200475BB1 /* Controller */,
 				A9E91F5D2CEE646F00475BB1 /* Data */,
 				A9E91F5C2CEE646800475BB1 /* Features */,
 				A9E91F582CEE641E00475BB1 /* Resources */,
@@ -129,6 +138,7 @@
 			children = (
 				A9E91F232CEE628000475BB1 /* Entry.swift */,
 				A9E91F612CEE6B4E00475BB1 /* User.swift */,
+				A9E91F772CF1059800475BB1 /* ModelContext.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -153,6 +163,8 @@
 		A9E91F602CEE649700475BB1 /* EntryDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A9E91F732CF102FD00475BB1 /* EntryDetailView.swift */,
+				A9E91F752CF1031E00475BB1 /* EntryDetailViewModel.swift */,
 			);
 			path = EntryDetail;
 			sourceTree = "<group>";
@@ -164,6 +176,14 @@
 				A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		A9E91F792CF105D200475BB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F7C2CF1060100475BB1 /* DataController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,10 +298,14 @@
 			files = (
 				A9E91F6E2CF0F7F600475BB1 /* MainViewModel.swift in Sources */,
 				A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */,
+				A9E91F762CF1031E00475BB1 /* EntryDetailViewModel.swift in Sources */,
 				A9E91F622CEE6B5300475BB1 /* User.swift in Sources */,
 				A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */,
+				A9E91F782CF105A200475BB1 /* ModelContext.swift in Sources */,
 				A9E91F222CEE628000475BB1 /* HomeView.swift in Sources */,
 				A9E91F242CEE628000475BB1 /* Entry.swift in Sources */,
+				A9E91F742CF102FD00475BB1 /* EntryDetailView.swift in Sources */,
+				A9E91F7D2CF1060600475BB1 /* DataController.swift in Sources */,
 				A9E91F642CEE6D0900475BB1 /* HomeViewModel.swift in Sources */,
 				A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */,
 			);
