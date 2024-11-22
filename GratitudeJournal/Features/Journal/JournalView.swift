@@ -8,9 +8,9 @@
 import SwiftUI
 import SwiftData
 
-struct HomeView: View {
+struct JournalView: View {
     var user: User
-    @State var model = HomeViewModel()
+    @State var model = JournalViewModel()
     @Environment(\.modelContext) private var modelContext
     @Query private var entries: [Entry]
 
@@ -40,6 +40,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(user: User(name: "Marco"))
+    JournalView(user: User(name: "Marco"))
         .modelContainer(DataController.shared.previewContainer)
 }

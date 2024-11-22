@@ -26,7 +26,7 @@ struct MainView: View {
             ProgressView()
         case .normal(let user):
             TabView {
-                HomeView(user: user)
+                JournalView(user: user)
                     .tabItem {
                         Label("Journal", systemImage: "book.closed")
                     }

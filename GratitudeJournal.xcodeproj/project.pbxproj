@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F1F2CEE628000475BB1 /* GratitudeJournalApp.swift */; };
-		A9E91F222CEE628000475BB1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F212CEE628000475BB1 /* HomeView.swift */; };
+		A9E91F222CEE628000475BB1 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F212CEE628000475BB1 /* JournalView.swift */; };
 		A9E91F242CEE628000475BB1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F232CEE628000475BB1 /* Entry.swift */; };
 		A9E91F262CEE628100475BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E91F252CEE628100475BB1 /* Assets.xcassets */; };
 		A9E91F622CEE6B5300475BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F612CEE6B4E00475BB1 /* User.swift */; };
-		A9E91F642CEE6D0900475BB1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F632CEE6D0300475BB1 /* HomeViewModel.swift */; };
+		A9E91F642CEE6D0900475BB1 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F632CEE6D0300475BB1 /* JournalViewModel.swift */; };
 		A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6B2CF0F7D500475BB1 /* MainView.swift */; };
 		A9E91F6E2CF0F7F600475BB1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */; };
 		A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */; };
@@ -35,13 +35,13 @@
 /* Begin PBXFileReference section */
 		A9E91F1C2CEE628000475BB1 /* GratitudeJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GratitudeJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E91F1F2CEE628000475BB1 /* GratitudeJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeJournalApp.swift; sourceTree = "<group>"; };
-		A9E91F212CEE628000475BB1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A9E91F212CEE628000475BB1 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		A9E91F232CEE628000475BB1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		A9E91F252CEE628100475BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9E91F272CEE628100475BB1 /* GratitudeJournal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GratitudeJournal.entitlements; sourceTree = "<group>"; };
 		A9E91F2F2CEE628100475BB1 /* GratitudeJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratitudeJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E91F612CEE6B4E00475BB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A9E91F632CEE6D0300475BB1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A9E91F632CEE6D0300475BB1 /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		A9E91F6B2CF0F7D500475BB1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -125,10 +125,10 @@
 		A9E91F5C2CEE646800475BB1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				A9E91F692CF0F7BD00475BB1 /* Main */,
 				A9E91F602CEE649700475BB1 /* EntryDetail */,
+				A9E91F7E2CF1114E00475BB1 /* Journal */,
+				A9E91F5E2CEE648700475BB1 /* Main */,
 				A9E91F5F2CEE649000475BB1 /* Settings */,
-				A9E91F5E2CEE648700475BB1 /* Home */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -143,13 +143,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		A9E91F5E2CEE648700475BB1 /* Home */ = {
+		A9E91F5E2CEE648700475BB1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A9E91F212CEE628000475BB1 /* HomeView.swift */,
-				A9E91F632CEE6D0300475BB1 /* HomeViewModel.swift */,
+				A9E91F6B2CF0F7D500475BB1 /* MainView.swift */,
+				A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A9E91F5F2CEE649000475BB1 /* Settings */ = {
@@ -169,21 +169,21 @@
 			path = EntryDetail;
 			sourceTree = "<group>";
 		};
-		A9E91F692CF0F7BD00475BB1 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				A9E91F6B2CF0F7D500475BB1 /* MainView.swift */,
-				A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		A9E91F792CF105D200475BB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				A9E91F7C2CF1060100475BB1 /* DataController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9E91F7E2CF1114E00475BB1 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F212CEE628000475BB1 /* JournalView.swift */,
+				A9E91F632CEE6D0300475BB1 /* JournalViewModel.swift */,
+			);
+			path = Journal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,11 +302,11 @@
 				A9E91F622CEE6B5300475BB1 /* User.swift in Sources */,
 				A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */,
 				A9E91F782CF105A200475BB1 /* ModelContext.swift in Sources */,
-				A9E91F222CEE628000475BB1 /* HomeView.swift in Sources */,
+				A9E91F222CEE628000475BB1 /* JournalView.swift in Sources */,
 				A9E91F242CEE628000475BB1 /* Entry.swift in Sources */,
 				A9E91F742CF102FD00475BB1 /* EntryDetailView.swift in Sources */,
 				A9E91F7D2CF1060600475BB1 /* DataController.swift in Sources */,
-				A9E91F642CEE6D0900475BB1 /* HomeViewModel.swift in Sources */,
+				A9E91F642CEE6D0900475BB1 /* JournalViewModel.swift in Sources */,
 				A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
