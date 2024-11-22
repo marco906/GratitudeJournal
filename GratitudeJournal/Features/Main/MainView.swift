@@ -43,5 +43,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
-        .modelContainer(DataController.previewContainer)
+        .modelContainer(DataController.shared.previewContainer)
 }

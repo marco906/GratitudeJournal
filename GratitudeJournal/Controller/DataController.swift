@@ -9,9 +9,10 @@ import SwiftData
 
 @MainActor
 class DataController {
+    static var shared = DataController()
     static let schema = Schema([User.self, Entry.self])
     
-    static let defaultContainer: ModelContainer = {
+    let defaultContainer: ModelContainer = {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
         do {
@@ -21,7 +22,7 @@ class DataController {
         }
     }()
     
-    static let previewContainer: ModelContainer = {
+   let previewContainer: ModelContainer = {
         do {
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
             let container = try ModelContainer(for: schema, configurations: [modelConfiguration])

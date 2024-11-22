@@ -25,6 +25,10 @@ import SwiftData
         isNewEntry ? "Save" : "Update"
     }
     
+    var navTitle: String {
+        isNewEntry ? "New Journal Entry" : "Edit Journal Entry"
+    }
+    
     func setup(context: ModelContext, entry: Entry?, user: User) {
         self.context = context
         self.user = user
@@ -33,6 +37,7 @@ import SwiftData
             self.title = entry.title
             self.content = entry.content
             self.mood = entry.mood
+            self.entry = entry
         }
     }
     
