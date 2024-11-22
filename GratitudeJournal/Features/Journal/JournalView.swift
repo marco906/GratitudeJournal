@@ -16,24 +16,44 @@ struct JournalView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                Text(model.greetingMessage)
-                
-                Section("Your Journal") {
-                    ForEach(entries) { entry in
-                        Text(entry.title)
-                    }
-                }
-            }
+            content
             .navigationTitle("Journal")
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Add") {
-                    }
-                }
+                toolbar
             }
             .task {
                 model.setup(user: user)
+            }
+            .sheet(isPresented: $model.showEntrySheet, onDismiss: model.resetCurrentEntry) {
+                EntryDetailView(entry: model.currentEntry, user: user)
+            }
+        }
+    }
+    
+    var content: some View {
+        List {
+            Section("Your Journal") {
+                ForEach(entries) { entry in
+                    entryCell(entry)
+                }
+            }
+        }
+        .navigationTitle("Journal")
+    }
+    
+    func entryCell(_ entry: Entry) -> some View {
+        Button {
+            model.editEntry(entry)
+        } label: {
+            Text(entry.title)
+        }
+    }
+    
+    @ToolbarContentBuilder
+    var toolbar: some ToolbarContent {
+        ToolbarItem(placement: .primaryAction) {
+            Button("Add") {
+                model.addEntry()
             }
         }
     }

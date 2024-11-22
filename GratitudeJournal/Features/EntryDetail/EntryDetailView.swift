@@ -33,11 +33,11 @@ struct EntryDetailView: View {
             Section("Title") {
                 TextField("Entry Title", text: $model.title)
             }
-            Section("Text") {
-                TextField("How was your day?", text: $model.content, axis: .vertical)
-            }
             Section("Mood") {
                 TextField("Your mood as Emoji", text: $model.mood)
+            }
+            Section("Text") {
+                TextField("How was your day?", text: $model.content, axis: .vertical)
             }
         }
     }
