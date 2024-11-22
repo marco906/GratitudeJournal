@@ -11,6 +11,7 @@ import SwiftData
 @Model
 final class Entry {
     var id: UUID = UUID()
+    var date: Date = Date()
     var title: String = ""
     var content: String = ""
     var mood: String = ""

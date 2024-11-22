@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 import SwiftData
 
-class HomeViewModel: ObservableObject {
+@Observable
+class HomeViewModel {
     enum ModelState {
         case loading
         case normal
         case error(message: String)
     }
     
-    @Published var state: ModelState = .loading
+    var state: ModelState = .loading
     var greetingMessage: String {
         if let name = user?.name {
            "Hello, \(name)!"

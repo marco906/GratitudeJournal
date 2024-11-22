@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    @StateObject var model = HomeViewModel()
+    @State var model = HomeViewModel()
     @Environment(\.modelContext) private var modelContext
     @Query private var entries: [Entry]
 
