@@ -30,7 +30,7 @@ struct MainView: View {
                     .tabItem {
                         Label("Journal", systemImage: "book.closed")
                     }
-                Text("Settings")
+                SettingsView(user: user)
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }

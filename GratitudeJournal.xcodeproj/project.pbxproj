@@ -15,6 +15,7 @@
 		A9E91F642CEE6D0900475BB1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F632CEE6D0300475BB1 /* HomeViewModel.swift */; };
 		A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6B2CF0F7D500475BB1 /* MainView.swift */; };
 		A9E91F6E2CF0F7F600475BB1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */; };
+		A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		A9E91F632CEE6D0300475BB1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A9E91F6B2CF0F7D500475BB1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A9E91F6D2CF0F7F600475BB1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -143,6 +145,7 @@
 		A9E91F5F2CEE649000475BB1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E91F6E2CF0F7F600475BB1 /* MainViewModel.swift in Sources */,
+				A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */,
 				A9E91F622CEE6B5300475BB1 /* User.swift in Sources */,
 				A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */,
 				A9E91F222CEE628000475BB1 /* HomeView.swift in Sources */,
