@@ -17,7 +17,7 @@ final class User {
     @Relationship(deleteRule: .cascade, inverse: \Entry.user)
     var entries: [Entry] = []
     
-    init() {
-        
+    init(name: String) {
+        self.name = name
     }
 }

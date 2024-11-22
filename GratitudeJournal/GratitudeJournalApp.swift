@@ -26,7 +26,7 @@ struct GratitudeJournalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            MainView()
         }
         .modelContainer(sharedModelContainer)
     }

@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
+    var user: User
     @State var model = HomeViewModel()
     @Environment(\.modelContext) private var modelContext
     @Query private var entries: [Entry]
@@ -28,19 +29,17 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add") {
-                        model.addEntry()
                     }
                 }
             }
             .task {
-                model.setup(context: modelContext)
-                model.start()
+                model.setup(user: user)
             }
         }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(user: User(name: "Marco"))
         .modelContainer(for: Entry.self, inMemory: true)
 }
