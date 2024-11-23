@@ -13,6 +13,8 @@ final class User {
     var id: UUID = UUID()
     var name: String = ""
     var allowNotifications: Bool = false
+    var notificationHour: Int = 19
+    var notificationMinute: Int = 0
     
     @Relationship(deleteRule: .cascade, inverse: \Entry.user)
     var entries: [Entry] = []

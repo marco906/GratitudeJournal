@@ -36,6 +36,12 @@ struct JournalView: View {
             Section {
                 header
             }
+            
+            if entries.isEmpty {
+                Button("Add your first entry") {
+                    model.addEntry()
+                }
+            }
 
             ForEach(entries) { entry in
                 Section {

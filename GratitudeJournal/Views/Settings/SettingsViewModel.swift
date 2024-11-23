@@ -12,24 +12,45 @@ import SwiftUI
 class SettingsViewModel {
     private let nc = NotificationController.shared
     var user: User?
+    var notificationTime: Date = Date()
     
     func setup(user: User) {
         self.user = user
+        var components = DateComponents()
+        components.hour = user.notificationHour
+        components.minute = user.notificationMinute
+        if let time = Calendar.current.date(from: components) {
+            notificationTime = time
+        }
     }
     
     func syncNotifications() async {
-        user?.allowNotifications = await checkNotificationPermissionStatus()
+        let status = await nc.getAuthorizationStatus()
+        user?.allowNotifications = status == .authorized
     }
     
-    func setAllowNotifications() {
+    func setAllowNotifications(_ allow: Bool) {
         Task {
-            let granted = await checkNotificationPermissionStatus()
-            if granted {
-                await scheduleDailyNotification()
+            if allow {
+                let granted = await checkNotificationPermissionStatus()
+                if granted {
+                    await scheduleDailyNotification()
+                } else {
+                    user?.allowNotifications = false
+                    openNotificationSettings()
+                }
             } else {
-                user?.allowNotifications = false
-                openNotificationSettings()
+                nc.cancelAndClearAllNotifications()
             }
+        }
+    }
+    
+    func setNotificationTime(_ time: Date) {
+        nc.cancelAndClearAllNotifications()
+        user?.notificationHour = Calendar.current.component(.hour, from: time)
+        user?.notificationMinute = Calendar.current.component(.minute, from: time)
+        Task {
+            await scheduleDailyNotification()
         }
     }
     
@@ -37,8 +58,8 @@ class SettingsViewModel {
         await nc.scheduleDailyNotification(
             title: "Gratitude Journal",
             msg: "It's time for your daily journal entry!",
-            hour: 14,
-            minute: 59
+            hour: user?.notificationHour ?? 19,
+            minute: user?.notificationMinute ?? 0
         )
     }
     
@@ -57,7 +78,7 @@ class SettingsViewModel {
     }
     
     private func openNotificationSettings() {
-        if let url = URL(string: UIApplication.openSettingsURLString) {
+        if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
             UIApplication.shared.open(url)
         }
     }

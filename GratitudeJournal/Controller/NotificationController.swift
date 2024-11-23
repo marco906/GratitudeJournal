@@ -20,7 +20,7 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
     ) {
         print("Notification received in foreground: \(notification.request.content.body)")
         
-        center.removeDeliveredNotifications(withIdentifiers: [notification.request.identifier])
+        clearAllDeliveredNotifications()
     }
 
     // Handle notifications that triggered the app's launch or were tapped
@@ -33,7 +33,7 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
         print("App launched or resumed via notification: \(userInfo)")
 
         // Clean up the notification from the Notification Center
-        center.removeDeliveredNotifications(withIdentifiers: [response.notification.request.identifier])
+        clearAllDeliveredNotifications()
 
         completionHandler()
     }
@@ -53,7 +53,7 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
 
         do {
             try await notificationCenter.add(request)
-            print("Daily notification scheduled.")
+            print("Daily notification scheduled at \(hour):\(minute)")
         } catch {
             print("Error scheduling notification: \(error)")
         }
@@ -76,5 +76,20 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
             print("Error requesting permission: \(error)")
         }
         return false
+    }
+    
+    func cancelAllScheduledNotifications() {
+        notificationCenter.removeAllPendingNotificationRequests()
+        print("All scheduled notifications have been canceled.")
+    }
+
+    func clearAllDeliveredNotifications() {
+        notificationCenter.removeAllDeliveredNotifications()
+        print("All delivered notifications have been cleared.")
+    }
+
+    func cancelAndClearAllNotifications() {
+        cancelAllScheduledNotifications()
+        clearAllDeliveredNotifications()
     }
 }

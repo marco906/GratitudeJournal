@@ -19,22 +19,23 @@ struct SettingsView: View {
                 }
                 Section("Keep your journey going") {
                     Toggle("Daily Journal Reminder", isOn: $user.allowNotifications)
+                    if user.allowNotifications {
+                        DatePicker("Time", selection: $model.notificationTime, displayedComponents: .hourAndMinute)
+                    }
+
                 }
             }
             .navigationTitle("Settings")
             .task {
                 model.setup(user: user)
-            }
-            .onAppear() {
-                Task {
-                    await model.syncNotifications()
-                }
+                await model.syncNotifications()
             }
             
             .onChange(of: user.allowNotifications) {
-                if user.allowNotifications {
-                    model.setAllowNotifications()
-                }
+                model.setAllowNotifications(user.allowNotifications)
+            }
+            .onChange(of: model.notificationTime, initial: false) {
+                model.setNotificationTime(model.notificationTime)
             }
         }
     }
