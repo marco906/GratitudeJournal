@@ -10,7 +10,34 @@ import UserNotifications
 class NotificationController: NSObject, UNUserNotificationCenterDelegate {
     static let shared = NotificationController()
     private let notificationCenter = UNUserNotificationCenter.current()
+    
+
+    // Handle notifications received while the app is in the foreground
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        print("Notification received in foreground: \(notification.request.content.body)")
         
+        center.removeDeliveredNotifications(withIdentifiers: [notification.request.identifier])
+    }
+
+    // Handle notifications that triggered the app's launch or were tapped
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        let userInfo = response.notification.request.content.userInfo
+        print("App launched or resumed via notification: \(userInfo)")
+
+        // Clean up the notification from the Notification Center
+        center.removeDeliveredNotifications(withIdentifiers: [response.notification.request.identifier])
+
+        completionHandler()
+    }
+    
     func scheduleDailyNotification(title: String, msg: String, hour: Int, minute: Int) async {
         let content = UNMutableNotificationContent()
         content.title = title
