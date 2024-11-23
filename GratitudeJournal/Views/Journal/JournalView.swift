@@ -38,7 +38,7 @@ struct JournalView: View {
                 }
             }
         }
-        .navigationTitle("Journal")
+        .navigationTitle(model.greetingMessage)
     }
     
     func entryCell(_ entry: Entry) -> some View {
