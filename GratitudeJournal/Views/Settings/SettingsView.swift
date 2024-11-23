@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State var model = SettingsViewModel()
     @Bindable var user: User
     
     var body: some View {
@@ -21,6 +22,20 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .task {
+                model.setup(user: user)
+            }
+            .onAppear() {
+                Task {
+                    await model.syncNotifications()
+                }
+            }
+            
+            .onChange(of: user.allowNotifications) {
+                if user.allowNotifications {
+                    model.setAllowNotifications()
+                }
+            }
         }
     }
 }

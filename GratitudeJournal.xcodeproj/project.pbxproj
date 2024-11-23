@@ -22,6 +22,8 @@
 		A9E91F852CF1C4E300475BB1 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */; };
 		A9E91F872CF1CC7100475BB1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F862CF1CC7100475BB1 /* EntryCell.swift */; };
 		A9E91F8D2CF2068800475BB1 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F8C2CF2068400475BB1 /* AppImage.swift */; };
+		A9E91F8F2CF20CBC00475BB1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F8E2CF20CB600475BB1 /* SettingsViewModel.swift */; };
+		A9E91F912CF2142500475BB1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F902CF2141E00475BB1 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 		A9E91F862CF1CC7100475BB1 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		A9E91F8C2CF2068400475BB1 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		A9E91F8E2CF20CB600475BB1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A9E91F902CF2141E00475BB1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E91F6F2CF0FEA600475BB1 /* SettingsView.swift */,
+				A9E91F8E2CF20CB600475BB1 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E91F7C2CF1060100475BB1 /* DataController.swift */,
+				A9E91F902CF2141E00475BB1 /* NotificationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,9 +318,11 @@
 			files = (
 				A9E91F6E2CF0F7F600475BB1 /* MainViewModel.swift in Sources */,
 				A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */,
+				A9E91F912CF2142500475BB1 /* NotificationController.swift in Sources */,
 				A9E91F762CF1031E00475BB1 /* EntryDetailViewModel.swift in Sources */,
 				A9E91F622CEE6B5300475BB1 /* User.swift in Sources */,
 				A9E91F852CF1C4E300475BB1 /* EmojiTextField.swift in Sources */,
+				A9E91F8F2CF20CBC00475BB1 /* SettingsViewModel.swift in Sources */,
 				A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */,
 				A9E91F222CEE628000475BB1 /* JournalView.swift in Sources */,
 				A9E91F8D2CF2068800475BB1 /* AppImage.swift in Sources */,
