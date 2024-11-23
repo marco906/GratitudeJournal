@@ -19,6 +19,8 @@ import SwiftUI
     var user: User?
     var entry: Entry?
     
+    var showDeleteDialog = false
+    
     var isNewEntry: Bool {
         entry == nil
     }
@@ -58,5 +60,10 @@ import SwiftUI
         if isNewEntry {
             context?.insert(entryToSave)
         }
+    }
+    
+    func delete() {
+        guard let entry = entry else { return }
+        context?.delete(entry)
     }
 }

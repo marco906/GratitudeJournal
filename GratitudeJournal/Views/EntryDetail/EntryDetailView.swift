@@ -40,6 +40,12 @@ struct EntryDetailView: View {
                 .task {
                     model.setup(context: modelContext, entry: entry, user: user)
                 }
+                .confirmationDialog("Delete Entry?", isPresented: $model.showDeleteDialog, titleVisibility: .visible) {
+                    Button("Delete", role: .destructive) {
+                        model.delete()
+                        dismiss()
+                    }
+                }
         }
     }
     
@@ -60,6 +66,21 @@ struct EntryDetailView: View {
             Section("Content") {
                 TextField("How was your day, what where yo grateful for?", text: $model.content, axis: .vertical)
                     .lineLimit(2...15)
+            }
+            
+            if let entry = entry {
+                Section{
+                    Button(role: .destructive) {
+                        model.showDeleteDialog = true
+                    } label: {
+                        HStack {
+                            Text("Delete Entry")
+                            Spacer()
+                            Image(systemName: "trash")
+                        }
+                    }
+
+                }
             }
         }
     }
