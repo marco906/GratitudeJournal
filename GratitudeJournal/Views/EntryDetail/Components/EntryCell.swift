@@ -16,9 +16,11 @@ struct EntryCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline, spacing: 4) {
-                Text(mood)
-                    .font(.callout)
-                Text(title)
+                HStack(spacing: 4) {
+                    Text(mood)
+                        .font(.subheadline)
+                    Text(title)
+                }
                 Spacer()
                 Text(date.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption)

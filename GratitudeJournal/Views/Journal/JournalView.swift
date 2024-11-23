@@ -47,11 +47,11 @@ struct JournalView: View {
     }
     
     var header: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(model.greetingMessage)
                 .font(.body)
                 .fontWeight(.semibold)
-            Text("Nice to see you ☺️! Here is an overview of your gratitude journal. You can add new entries or view and edit exiting entries.")
+            Text("Nice to see you! Here is an overview of your gratitude journal. You can add new entries or view and edit exiting entries.")
                 .font(.subheadline)
         }
         

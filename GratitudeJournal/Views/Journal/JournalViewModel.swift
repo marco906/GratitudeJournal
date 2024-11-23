@@ -16,9 +16,9 @@ class JournalViewModel {
     
     var greetingMessage: String {
         if let name = user?.name, !name.isEmpty {
-           "Hello, \(name)!"
+           "Hello, \(name) ☺️"
         } else {
-            "Hello!"
+            "Hello ☺️"
         }
     }
     
