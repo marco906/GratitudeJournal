@@ -14,21 +14,6 @@ struct EntryDetailView: View {
     var user: User
     @State var model = EntryDetailViewModel()
     
-    var emoji: Binding<String> {
-        Binding(
-            get: {
-                model.mood
-            },
-            set: { new in
-                if let emoji = new.last {
-                    model.mood = String(emoji)
-                } else {
-                    model.mood = ""
-                }
-            }
-        )
-    }
-    
     var body: some View {
         NavigationStack {
             content
@@ -46,6 +31,8 @@ struct EntryDetailView: View {
                         dismiss()
                     }
                 }
+                .photosPicker(isPresented: $model.showPhotosPicker, selection: $model.imageSelection)
+            
         }
     }
     
@@ -56,7 +43,7 @@ struct EntryDetailView: View {
                 HStack{
                     Text("Mood")
                     Spacer()
-                    EmojiTextField(text: emoji)
+                    EmojiTextField(text: model.emoji)
                         .frame(width: 40)
                         .background(Color.gray.opacity(0.2).cornerRadius(8))
                 }
@@ -68,7 +55,24 @@ struct EntryDetailView: View {
                     .lineLimit(2...15)
             }
             
-            if let entry = entry {
+            Section("Attachment") {
+                if let image = model.image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: 200)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
+                    Button("Remove Image") {
+                        model.removeImage()
+                    }
+                } else {
+                    Button("Add Image") {
+                        model.showPhotosPicker = true
+                    }
+                }
+            }
+            
+            if entry != nil {
                 Section{
                     Button(role: .destructive) {
                         model.showDeleteDialog = true

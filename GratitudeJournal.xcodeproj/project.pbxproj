@@ -21,6 +21,7 @@
 		A9E91F7D2CF1060600475BB1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F7C2CF1060100475BB1 /* DataController.swift */; };
 		A9E91F852CF1C4E300475BB1 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */; };
 		A9E91F872CF1CC7100475BB1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F862CF1CC7100475BB1 /* EntryCell.swift */; };
+		A9E91F8D2CF2068800475BB1 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F8C2CF2068400475BB1 /* AppImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A9E91F7C2CF1060100475BB1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 		A9E91F862CF1CC7100475BB1 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
+		A9E91F8C2CF2068400475BB1 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -140,6 +142,7 @@
 			children = (
 				A9E91F232CEE628000475BB1 /* Entry.swift */,
 				A9E91F612CEE6B4E00475BB1 /* User.swift */,
+				A9E91F8C2CF2068400475BB1 /* AppImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				A9E91F852CF1C4E300475BB1 /* EmojiTextField.swift in Sources */,
 				A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */,
 				A9E91F222CEE628000475BB1 /* JournalView.swift in Sources */,
+				A9E91F8D2CF2068800475BB1 /* AppImage.swift in Sources */,
 				A9E91F242CEE628000475BB1 /* Entry.swift in Sources */,
 				A9E91F742CF102FD00475BB1 /* EntryDetailView.swift in Sources */,
 				A9E91F872CF1CC7100475BB1 /* EntryCell.swift in Sources */,

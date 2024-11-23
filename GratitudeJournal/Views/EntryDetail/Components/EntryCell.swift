@@ -12,6 +12,7 @@ struct EntryCell: View {
     var mood: String
     var date: Date
     var content: String
+    var image: Image?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -32,12 +33,19 @@ struct EntryCell: View {
             Text(content)
                 .foregroundStyle(.secondary)
                 .font(.subheadline)
+            if let image = image {
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 200)
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
+            }
         }
     }
 }
 
 #Preview {
     List {
-        EntryCell(title: "Lazy Sunday", mood: "😊", date: Date(), content: "Cozy, warm and lazy. A perfect day for a long nap. Feeling good, grateful for everything.")
+        EntryCell(title: "Lazy Sunday", mood: "😊", date: Date(), content: "Cozy, warm and lazy. A perfect day for a long nap. Feeling good, grateful for everything.", image: .init(.init(systemName: "star.fill")))
     }
 }

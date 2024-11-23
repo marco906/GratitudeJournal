@@ -43,7 +43,7 @@ class DataController {
             container.mainContext.insert(entry2)
             
             let entry3 = Entry(user: user)
-            entry3.title = "Beatiful hike"
+            entry3.title = "Beautiful hike"
             entry3.content = "Went hiking with my family. Feeling grateful for the nature and the fresh air."
             entry3.mood = "⛰️"
             container.mainContext.insert(entry3)

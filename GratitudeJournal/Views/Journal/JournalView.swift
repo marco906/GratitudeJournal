@@ -63,9 +63,10 @@ struct JournalView: View {
         Button {
             model.editEntry(entry)
         } label: {
-            EntryCell(title: entry.title, mood: entry.mood, date: entry.date, content: entry.content)
+            EntryCell(title: entry.title, mood: entry.mood, date: entry.date, content: entry.content, image: entry.image)
         }
         .tint(Color.primary)
+        .listRowInsets(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
     }
     
     @ToolbarContentBuilder
