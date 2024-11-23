@@ -30,13 +30,23 @@ class DataController {
             let user = User(name: "Marco")
             container.mainContext.insert(user)
 
-            for i in 1...9 {
-                let entry = Entry(user: user)
-                entry.title = "Entry \(i)"
-                entry.content = "Content for entry \(i)"
-                entry.mood = ["😁", "😊", "😉", "😫", "🤬", "😭", "🥳"].randomElement() ?? ""
-                container.mainContext.insert(entry)
-            }
+            let entry1 = Entry(user: user)
+            entry1.title = "Lazy Sunday"
+            entry1.content = "Cozy, warm and lazy. A perfect day for a long nap. Feeling grateful for my family and friends."
+            entry1.mood = "😊"
+            container.mainContext.insert(entry1)
+            
+            let entry2 = Entry(user: user)
+            entry2.title = "Struggle at work"
+            entry2.content = "Bit exhausted after a long day at work. But Feeling grateful for my job and my colleagues."
+            entry2.mood = "😮‍💨"
+            container.mainContext.insert(entry2)
+            
+            let entry3 = Entry(user: user)
+            entry3.title = "Beatiful hike"
+            entry3.content = "Went hiking with my family. Feeling grateful for the nature and the fresh air."
+            entry3.mood = "⛰️"
+            container.mainContext.insert(entry3)
 
             return container
         } catch {
