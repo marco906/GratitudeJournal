@@ -14,6 +14,21 @@ struct EntryDetailView: View {
     var user: User
     @State var model = EntryDetailViewModel()
     
+    var emoji: Binding<String> {
+        Binding(
+            get: {
+                model.mood
+            },
+            set: { new in
+                if let emoji = new.last {
+                    model.mood = String(emoji)
+                } else {
+                    model.mood = ""
+                }
+            }
+        )
+    }
+    
     var body: some View {
         NavigationStack {
             content
@@ -30,14 +45,21 @@ struct EntryDetailView: View {
     
     var content: some View {
         List {
-            Section("Title") {
-                TextField("Entry Title", text: $model.title)
+            Section("Summary") {
+                TextField("Title", text: $model.title)
+                HStack{
+                    Text("Mood")
+                    Spacer()
+                    EmojiTextField(text: emoji)
+                        .frame(width: 40)
+                        .background(Color.gray.opacity(0.2).cornerRadius(8))
+                }
+                DatePicker("Date", selection: $model.date, displayedComponents: .date)
             }
-            Section("Mood") {
-                TextField("Your mood as Emoji", text: $model.mood)
-            }
-            Section("Text") {
-                TextField("How was your day?", text: $model.content, axis: .vertical)
+
+            Section("Content") {
+                TextField("How was your day, what where yo grateful for?", text: $model.content, axis: .vertical)
+                    .lineLimit(2...15)
             }
         }
     }
@@ -48,6 +70,7 @@ struct EntryDetailView: View {
             Button(model.saveBtnTitle) {
                 clickedSave()
             }
+            .disabled(model.saveDisabled)
         }
     }
     

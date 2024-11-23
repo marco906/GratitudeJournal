@@ -32,21 +32,27 @@ struct JournalView: View {
     
     var content: some View {
         List {
-            Section("Your Journal") {
-                ForEach(entries) { entry in
+            Section(model.greetingMessage) {
+                Text("Nice to see you ☺️! Here is an overview of your gratitude journal. You can add new entries or view and edit exiting entries.")
+                    .font(.callout)
+            }
+            
+            ForEach(entries) { entry in
+                Section {
                     entryCell(entry)
                 }
+                .listSectionSpacing(.compact)
             }
         }
-        .navigationTitle(model.greetingMessage)
     }
     
     func entryCell(_ entry: Entry) -> some View {
         Button {
             model.editEntry(entry)
         } label: {
-            Text(entry.title)
+            EntryCell(title: entry.title, mood: entry.mood, date: entry.date, content: entry.content)
         }
+        .tint(Color.primary)
     }
     
     @ToolbarContentBuilder

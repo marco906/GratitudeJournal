@@ -19,6 +19,8 @@
 		A9E91F742CF102FD00475BB1 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F732CF102FD00475BB1 /* EntryDetailView.swift */; };
 		A9E91F762CF1031E00475BB1 /* EntryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F752CF1031E00475BB1 /* EntryDetailViewModel.swift */; };
 		A9E91F7D2CF1060600475BB1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F7C2CF1060100475BB1 /* DataController.swift */; };
+		A9E91F852CF1C4E300475BB1 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */; };
+		A9E91F872CF1CC7100475BB1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E91F862CF1CC7100475BB1 /* EntryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		A9E91F732CF102FD00475BB1 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
 		A9E91F752CF1031E00475BB1 /* EntryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewModel.swift; sourceTree = "<group>"; };
 		A9E91F7C2CF1060100475BB1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
+		A9E91F862CF1CC7100475BB1 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -162,6 +166,7 @@
 			children = (
 				A9E91F732CF102FD00475BB1 /* EntryDetailView.swift */,
 				A9E91F752CF1031E00475BB1 /* EntryDetailViewModel.swift */,
+				A9E91F832CF1C4C600475BB1 /* Components */,
 			);
 			path = EntryDetail;
 			sourceTree = "<group>";
@@ -181,6 +186,15 @@
 				A9E91F632CEE6D0300475BB1 /* JournalViewModel.swift */,
 			);
 			path = Journal;
+			sourceTree = "<group>";
+		};
+		A9E91F832CF1C4C600475BB1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A9E91F862CF1CC7100475BB1 /* EntryCell.swift */,
+				A9E91F842CF1C4D800475BB1 /* EmojiTextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +311,12 @@
 				A9E91F702CF0FEA600475BB1 /* SettingsView.swift in Sources */,
 				A9E91F762CF1031E00475BB1 /* EntryDetailViewModel.swift in Sources */,
 				A9E91F622CEE6B5300475BB1 /* User.swift in Sources */,
+				A9E91F852CF1C4E300475BB1 /* EmojiTextField.swift in Sources */,
 				A9E91F6C2CF0F7D500475BB1 /* MainView.swift in Sources */,
 				A9E91F222CEE628000475BB1 /* JournalView.swift in Sources */,
 				A9E91F242CEE628000475BB1 /* Entry.swift in Sources */,
 				A9E91F742CF102FD00475BB1 /* EntryDetailView.swift in Sources */,
+				A9E91F872CF1CC7100475BB1 /* EntryCell.swift in Sources */,
 				A9E91F7D2CF1060600475BB1 /* DataController.swift in Sources */,
 				A9E91F642CEE6D0900475BB1 /* JournalViewModel.swift in Sources */,
 				A9E91F202CEE628000475BB1 /* GratitudeJournalApp.swift in Sources */,
