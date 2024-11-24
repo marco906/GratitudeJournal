@@ -22,7 +22,13 @@ struct SettingsView: View {
                     if user.allowNotifications {
                         DatePicker("Time", selection: $model.notificationTime, displayedComponents: .hourAndMinute)
                     }
-
+                }
+                
+                Section {
+                    Button("Delete profile and data") {
+                        // TODO: Implement
+                    }
+                    .foregroundStyle(.red)
                 }
             }
             .navigationTitle("Settings")

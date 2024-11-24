@@ -23,7 +23,7 @@ struct JournalView: View {
                 toolbar
             }
             .task {
-                model.setup(user: user)
+                model.setup(userName: user.name)
             }
             .sheet(isPresented: $model.showEntrySheet, onDismiss: model.resetCurrentEntry) {
                 EntryDetailView(entry: model.currentEntry, user: user)
@@ -69,7 +69,7 @@ struct JournalView: View {
         Button {
             model.editEntry(entry)
         } label: {
-            EntryCell(title: entry.title, mood: entry.mood, date: entry.date, content: entry.content, image: entry.image)
+            EntryCell(title: entry.title, mood: entry.mood, date: entry.date, content: entry.content, image: entry.getImage()?.image)
         }
         .tint(Color.primary)
         .listRowInsets(.init(top: 12, leading: 12, bottom: 12, trailing: 12))

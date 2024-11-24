@@ -18,19 +18,23 @@ final class Entry {
     var mood: String = ""
     
     @Attribute(.externalStorage)
-    var imageData: Data?
+    private var imageData: Data?
     
     var user: User?
     
-    var image: Image? {
-        if let imageData = imageData, let uiImage = UIImage(data: imageData) {
-            return Image(uiImage: uiImage)
+    init(user: User) {
+        self.user = user
+    }
+    
+    func setImageData(_ data: Data?) {
+        imageData = data
+    }
+    
+    func getImage() -> AppImage? {
+        if let imageData = imageData {
+            return AppImage(data: imageData)
         } else {
             return nil
         }
-    }
-    
-    init(user: User?) {
-        self.user = user
     }
 }

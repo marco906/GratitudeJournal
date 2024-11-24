@@ -67,7 +67,7 @@ struct EntryDetailView: View {
                     }
                 } else {
                     Button("Add Image") {
-                        model.showPhotosPicker = true
+                        model.pickImage()
                     }
                 }
             }
@@ -75,7 +75,7 @@ struct EntryDetailView: View {
             if entry != nil {
                 Section{
                     Button(role: .destructive) {
-                        model.showDeleteDialog = true
+                        clickedDelete()
                     } label: {
                         HStack {
                             Text("Delete Entry")
@@ -102,6 +102,10 @@ struct EntryDetailView: View {
     func clickedSave() {
         model.save()
         dismiss()
+    }
+    
+    func clickedDelete() {
+        model.askToDelete()
     }
 }
 

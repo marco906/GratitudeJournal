@@ -14,18 +14,10 @@ class JournalViewModel {
     var showEntrySheet = false
     var currentEntry: Entry?
     
-    var greetingMessage: String {
-        if let name = user?.name, !name.isEmpty {
-           "Hello, \(name) ☺️"
-        } else {
-            "Hello ☺️"
-        }
-    }
+    var greetingMessage: String = ""
     
-    private var user: User?
-    
-    func setup(user: User) {
-        self.user = user
+    func setup(userName: String) {
+        self.greetingMessage = userName.isEmpty ? "Hello ☺️" : "Hello, \(userName) ☺️"
     }
     
     func addEntry() {

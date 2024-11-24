@@ -25,14 +25,13 @@ class SettingsViewModel {
     }
     
     func syncNotifications() async {
-        let status = await nc.getAuthorizationStatus()
-        user?.allowNotifications = status == .authorized
+        user?.allowNotifications = await nc.isAuthorized()
     }
     
     func setAllowNotifications(_ allow: Bool) {
         Task {
             if allow {
-                let granted = await checkNotificationPermissionStatus()
+                let granted = await nc.checkAndRequestNotificationPermission()
                 if granted {
                     await scheduleDailyNotification()
                 } else {
@@ -61,20 +60,6 @@ class SettingsViewModel {
             hour: user?.notificationHour ?? 19,
             minute: user?.notificationMinute ?? 0
         )
-    }
-    
-    private func checkNotificationPermissionStatus() async -> Bool {
-        let status = await nc.getAuthorizationStatus()
-        switch status {
-        case .authorized:
-            return true
-        case .denied:
-            return false
-        case .notDetermined:
-            return await nc.requestNotificationPermission()
-        default:
-            return false
-        }
     }
     
     private func openNotificationSettings() {

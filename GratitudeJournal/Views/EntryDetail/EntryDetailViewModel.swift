@@ -80,19 +80,18 @@ import PhotosUI
             self.content = entry.content
             self.mood = entry.mood
             self.entry = entry
-            if let imageData = entry.imageData {
-                imageStore = AppImage(data: imageData)
-            }
+            self.imageStore = entry.getImage()
         }
     }
     
     func save() {
+        guard let user = user else { return }
         let entryToSave = entry ?? Entry(user: user)
         entryToSave.date = date
         entryToSave.title = title
         entryToSave.content = content
         entryToSave.mood = mood
-        entryToSave.imageData = imageStore?.data
+        entryToSave.setImageData(imageStore?.data)
         
         if isNewEntry {
             context?.insert(entryToSave)
@@ -100,10 +99,18 @@ import PhotosUI
         try? context?.save()
     }
     
+    func askToDelete() {
+        showDeleteDialog = true
+    }
+    
     func delete() {
         guard let entry = entry else { return }
         context?.delete(entry)
         try? context?.save()
+    }
+    
+    func pickImage() {
+        showPhotosPicker = true
     }
     
     func removeImage() {

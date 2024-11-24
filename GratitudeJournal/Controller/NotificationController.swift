@@ -59,11 +59,16 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     
-    func getAuthorizationStatus() async -> UNAuthorizationStatus {
+    func isAuthorized() async -> Bool {
+        let status = await getAuthorizationStatus()
+        return status == .authorized
+    }
+    
+    private func getAuthorizationStatus() async -> UNAuthorizationStatus {
         return await notificationCenter.notificationSettings().authorizationStatus
     }
     
-    func requestNotificationPermission() async -> Bool {
+    private func requestNotificationPermission() async -> Bool {
         do {
             let granted = try await notificationCenter.requestAuthorization(options: [.alert, .sound, .badge])
             if granted {
@@ -78,12 +83,26 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
         return false
     }
     
-    func cancelAllScheduledNotifications() {
+    func checkAndRequestNotificationPermission() async -> Bool {
+        let status = await getAuthorizationStatus()
+        switch status {
+        case .authorized:
+            return true
+        case .denied:
+            return false
+        case .notDetermined:
+            return await requestNotificationPermission()
+        default:
+            return false
+        }
+    }
+    
+    private func cancelAllScheduledNotifications() {
         notificationCenter.removeAllPendingNotificationRequests()
         print("All scheduled notifications have been canceled.")
     }
 
-    func clearAllDeliveredNotifications() {
+    private func clearAllDeliveredNotifications() {
         notificationCenter.removeAllDeliveredNotifications()
         print("All delivered notifications have been cleared.")
     }
