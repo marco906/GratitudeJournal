@@ -16,6 +16,7 @@ final class User {
     var notificationHour: Int = 19
     var notificationMinute: Int = 0
     
+    // One-to-many relationship, if user is deleted, delete all related entries
     @Relationship(deleteRule: .cascade, inverse: \Entry.user)
     var entries: [Entry] = []
     

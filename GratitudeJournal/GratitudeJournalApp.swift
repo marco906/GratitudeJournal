@@ -8,6 +8,8 @@
 import SwiftUI
 import SwiftData
 
+// Entry point for the application, sets the main view and model container
+
 @main
 struct GratitudeJournalApp: App {
     var body: some Scene {

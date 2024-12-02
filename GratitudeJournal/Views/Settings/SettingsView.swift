@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Settings view
 struct SettingsView: View {
     @State var model = SettingsViewModel()
     @Bindable var user: User
@@ -46,6 +47,8 @@ struct SettingsView: View {
         }
     }
 }
+
+// MARK: - Previews
 
 #Preview {
     SettingsView(user: User(name: "Marco"))

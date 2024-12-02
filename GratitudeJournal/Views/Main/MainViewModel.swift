@@ -20,10 +20,12 @@ class MainViewModel {
     var state: ModelState = .loading
     private var context: ModelContext?
     
+    // Setup the view model with model context
     func setup(context: ModelContext) {
         self.context = context
     }
     
+    // On start load the user and set the model state
     func start() {
         do {
             let user = try getOrCreateUser()
@@ -33,6 +35,7 @@ class MainViewModel {
         }
     }
     
+    // Get or create the current user
     private func getOrCreateUser() throws -> User {
         let fetchDescriptor = FetchDescriptor<User>()
         let users = try context?.fetch(fetchDescriptor) ?? []

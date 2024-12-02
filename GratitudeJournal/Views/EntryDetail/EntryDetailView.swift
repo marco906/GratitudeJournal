@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+// View for creating or editing a journal entry
 struct EntryDetailView: View {
+    @State var model = EntryDetailViewModel()
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     var entry: Entry?
     var user: User
-    @State var model = EntryDetailViewModel()
     
     var body: some View {
         NavigationStack {
@@ -108,6 +109,8 @@ struct EntryDetailView: View {
         model.askToDelete()
     }
 }
+
+// MARK: - Previews
 
 #Preview("New Entry") {
     EntryDetailView(user: User(name: "Marco"))

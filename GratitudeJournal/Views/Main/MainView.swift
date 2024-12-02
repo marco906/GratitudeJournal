@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Main view for the application showing a tab view
 struct MainView: View {
     @State var model = MainViewModel()
     @Environment(\.modelContext) private var modelContext
@@ -40,6 +41,8 @@ struct MainView: View {
         }
     }
 }
+
+// MARK: - Previews
 
 #Preview {
     MainView()

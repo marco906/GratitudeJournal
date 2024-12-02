@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+// View for displaying a list of journal entries
 struct JournalView: View {
     var user: User
     @State var model = JournalViewModel()
@@ -84,6 +85,8 @@ struct JournalView: View {
         }
     }
 }
+
+// MARK: - Previews
 
 #Preview {
     JournalView(user: User(name: "Marco"))

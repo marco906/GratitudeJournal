@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+// Helper struct to handle image transfer
 struct AppImage: Transferable, Equatable {
     let image: Image
     let data: Data
     
+    // implement Transferable protocol
     static var transferRepresentation: some TransferRepresentation {
         DataRepresentation(importedContentType: .image) { data in
             guard let image = AppImage(data: data) else {
@@ -23,11 +25,13 @@ struct AppImage: Transferable, Equatable {
 }
 
 extension AppImage {
+    // create AppImage from Data
     init?(data: Data) {
         guard let uiImage = UIImage(data: data) else {
             return nil
         }
         
+        // get jpeg data from uiImage
         guard let jpegData = uiImage.jpegData(compressionQuality: 0.8) else { return nil }
         
         let image = Image(uiImage: uiImage)

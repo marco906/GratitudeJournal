@@ -14,6 +14,7 @@ class SettingsViewModel {
     var user: User?
     var notificationTime: Date = Date()
     
+    // Setup the view model with the user and set the notification time
     func setup(user: User) {
         self.user = user
         var components = DateComponents()
@@ -24,10 +25,12 @@ class SettingsViewModel {
         }
     }
     
+    // Sync the notification status
     func syncNotifications() async {
         user?.allowNotifications = await nc.isAuthorized()
     }
     
+    // Set allow notifications, ask for permission if necessary and shedule the daily notification
     func setAllowNotifications(_ allow: Bool) {
         Task {
             if allow {
@@ -44,6 +47,7 @@ class SettingsViewModel {
         }
     }
     
+    // Set the daily notification with the given time
     func setNotificationTime(_ time: Date) {
         nc.cancelAndClearAllNotifications()
         user?.notificationHour = Calendar.current.component(.hour, from: time)
@@ -53,6 +57,7 @@ class SettingsViewModel {
         }
     }
     
+    // Schedule the daily notification
     private func scheduleDailyNotification() async {
         await nc.scheduleDailyNotification(
             title: "Gratitude Journal",
@@ -62,6 +67,7 @@ class SettingsViewModel {
         )
     }
     
+    // Open the system notification settings for the app
     private func openNotificationSettings() {
         if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
             UIApplication.shared.open(url)

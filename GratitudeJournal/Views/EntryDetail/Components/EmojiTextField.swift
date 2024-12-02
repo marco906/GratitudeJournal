@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+// Subclass form  UITextField for handling emoji input
 class UIEmojiTextField: UITextField {
 
     override func awakeFromNib() {
@@ -33,6 +34,7 @@ class UIEmojiTextField: UITextField {
     }
 }
 
+// SwiftUI wrapper for UIEmojiTextField
 struct EmojiTextField: UIViewRepresentable {
     @Binding var text: String
     var placeholder: String = ""

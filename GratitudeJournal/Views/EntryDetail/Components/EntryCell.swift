@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View component for displaying a journal entry
 struct EntryCell: View {
     var title: String
     var mood: String
@@ -43,6 +44,8 @@ struct EntryCell: View {
         }
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     List {

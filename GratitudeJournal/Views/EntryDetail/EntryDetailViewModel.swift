@@ -27,6 +27,7 @@ import PhotosUI
     
     var showPhotosPicker: Bool = false
     
+    // Handles photo selection
     var imageSelection: PhotosPickerItem? {
         didSet {
             guard let imageSelection = imageSelection else {
@@ -70,10 +71,12 @@ import PhotosUI
         )
     }
     
+    // Setup the view model, passing in the context, user and optional existing entry
     func setup(context: ModelContext, entry: Entry?, user: User) {
         self.context = context
         self.user = user
         
+        // If we are editing an existing entry, set the values from the entry
         if let entry = entry {
             self.date = entry.date
             self.title = entry.title
@@ -84,6 +87,7 @@ import PhotosUI
         }
     }
     
+    // Save the entry to the persistent store
     func save() {
         guard let user = user else { return }
         let entryToSave = entry ?? Entry(user: user)
@@ -93,26 +97,31 @@ import PhotosUI
         entryToSave.mood = mood
         entryToSave.setImageData(imageStore?.data)
         
+        // If this is a new entry, insert it into the context
         if isNewEntry {
             context?.insert(entryToSave)
         }
         try? context?.save()
     }
     
+    // Ask the user if they want to delete the entry and show a dialog
     func askToDelete() {
         showDeleteDialog = true
     }
     
+    // Delete the entry
     func delete() {
         guard let entry = entry else { return }
         context?.delete(entry)
         try? context?.save()
     }
     
+    // Show the photo picker
     func pickImage() {
         showPhotosPicker = true
     }
     
+    // Remove the selected image
     func removeImage() {
         imageSelection = nil
     }

@@ -26,10 +26,12 @@ final class Entry {
         self.user = user
     }
     
+    // Set image data
     func setImageData(_ data: Data?) {
         imageData = data
     }
     
+    // Get an AppImage from the image data
     func getImage() -> AppImage? {
         if let imageData = imageData {
             return AppImage(data: imageData)

@@ -16,19 +16,23 @@ class JournalViewModel {
     
     var greetingMessage: String = ""
     
+    // Setup the view model with the user name
     func setup(userName: String) {
         self.greetingMessage = userName.isEmpty ? "Hello ☺️" : "Hello, \(userName) ☺️"
     }
     
+    // Add a new entry
     func addEntry() {
         showEntrySheet = true
     }
     
+    // Edit an existing entry
     func editEntry(_ entry: Entry) {
         currentEntry = entry
         showEntrySheet = true
     }
     
+    // Reset the current entry
     func resetCurrentEntry() {
         currentEntry = nil
     }

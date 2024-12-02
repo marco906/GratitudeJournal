@@ -10,8 +10,11 @@ import SwiftData
 @MainActor
 class DataController {
     static var shared = DataController()
+    
+    // The schema for the app
     static let schema = Schema([User.self, Entry.self])
     
+    // The default model container, using a persistent store
     let defaultContainer: ModelContainer = {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
@@ -22,14 +25,17 @@ class DataController {
         }
     }()
     
-   let previewContainer: ModelContainer = {
+    // The preview model container, using an in-memory store
+    let previewContainer: ModelContainer = {
         do {
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
             let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
             
+            // Create and insert demo data
+            
             let user = User(name: "Marco")
             container.mainContext.insert(user)
-
+            
             let entry1 = Entry(user: user)
             entry1.title = "Lazy Sunday"
             entry1.content = "Cozy, warm and lazy. A perfect day for a long nap. Feeling grateful for my family and friends."
@@ -47,7 +53,7 @@ class DataController {
             entry3.content = "Went hiking with my family. Feeling grateful for the nature and the fresh air."
             entry3.mood = "⛰️"
             container.mainContext.insert(entry3)
-
+            
             return container
         } catch {
             fatalError("Failed to create model container for previewing: \(error.localizedDescription)")
