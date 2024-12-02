@@ -6,6 +6,7 @@
 //
 import Foundation
 import SwiftUI
+import SwiftData
 
 @MainActor
 @Observable
@@ -13,16 +14,24 @@ class SettingsViewModel {
     private let nc = NotificationController.shared
     var user: User?
     var notificationTime: Date = Date()
+    private var context: ModelContext?
     
     // Setup the view model with the user and set the notification time
-    func setup(user: User) {
+    func setup(user: User, context: ModelContext) {
         self.user = user
+        self.context = context
         var components = DateComponents()
         components.hour = user.notificationHour
         components.minute = user.notificationMinute
         if let time = Calendar.current.date(from: components) {
             notificationTime = time
         }
+    }
+    
+    // Delete the user and all entries
+    func delete() {
+        guard let user = user else { return }
+        context?.delete(user)
     }
     
     // Sync the notification status

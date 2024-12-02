@@ -9,6 +9,7 @@ import SwiftUI
 
 // Settings view
 struct SettingsView: View {
+    @Environment(\.modelContext) private var modelContext
     @State var model = SettingsViewModel()
     @Bindable var user: User
     
@@ -27,14 +28,14 @@ struct SettingsView: View {
                 
                 Section {
                     Button("Delete profile and data") {
-                        // TODO: Implement
+                        modelContext.delete(user)
                     }
                     .foregroundStyle(.red)
                 }
             }
             .navigationTitle("Settings")
             .task {
-                model.setup(user: user)
+                model.setup(user: user, context: modelContext)
                 await model.syncNotifications()
             }
             
