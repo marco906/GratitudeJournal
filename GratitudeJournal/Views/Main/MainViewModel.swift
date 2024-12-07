@@ -11,7 +11,7 @@ import SwiftData
 
 @Observable
 class MainViewModel {
-    enum ModelState {
+    enum ModelState: Equatable {
         case loading
         case normal(user: User)
         case error(message: String)
@@ -36,7 +36,7 @@ class MainViewModel {
     }
     
     // Get or create the current user
-    private func getOrCreateUser() throws -> User {
+    func getOrCreateUser() throws -> User {
         let fetchDescriptor = FetchDescriptor<User>()
         let users = try context?.fetch(fetchDescriptor) ?? []
         

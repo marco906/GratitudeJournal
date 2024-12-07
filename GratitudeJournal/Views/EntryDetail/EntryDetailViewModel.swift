@@ -88,8 +88,9 @@ import PhotosUI
     }
     
     // Save the entry to the persistent store
-    func save() {
-        guard let user = user else { return }
+    @discardableResult
+    func save() -> PersistentIdentifier? {
+        guard let user = user else { return nil }
         let entryToSave = entry ?? Entry(user: user)
         entryToSave.date = date
         entryToSave.title = title
@@ -102,6 +103,7 @@ import PhotosUI
             context?.insert(entryToSave)
         }
         try? context?.save()
+        return entryToSave.id
     }
     
     // Ask the user if they want to delete the entry and show a dialog

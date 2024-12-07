@@ -59,4 +59,16 @@ class DataController {
             fatalError("Failed to create model container for previewing: \(error.localizedDescription)")
         }
     }()
+    
+    // Returns a new empty preview model container, using an in-memory store
+    func previewContainerEmpty() -> ModelContainer {
+        do {
+            let modelConfiguration = ModelConfiguration(schema: DataController.schema, isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: DataController.schema, configurations: [modelConfiguration])
+            
+            return container
+        } catch {
+            fatalError("Failed to create model container for previewing: \(error.localizedDescription)")
+        }
+    }
 }
