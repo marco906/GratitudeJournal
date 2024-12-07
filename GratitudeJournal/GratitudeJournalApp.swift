@@ -16,6 +16,6 @@ struct GratitudeJournalApp: App {
         WindowGroup {
             MainView()
         }
-        .modelContainer(DataController.shared.previewContainer)
+        .modelContainer(DataController.shared.defaultContainer)
     }
 }
