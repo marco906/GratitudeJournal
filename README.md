@@ -35,6 +35,10 @@ Follow these steps to build and run the app on your local machine.
    - Press `Cmd + R` or click the **Run** button in the top-left corner of Xcode.
    - The app should launch in the simulator or on your connected device.
 
+## Tests
+
+Unit tests can be run from the file `GratitudeJournalTests.swift`.
+
 
 ## License
 
